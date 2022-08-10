@@ -1,0 +1,276 @@
+@import url(https://fonts.google.com/specimen/Roboto);
+@import url(https://fonts.google.com/specimen/Shrikhand);
+
+
+body{
+    font-family: Roboto;
+    width: 100%;
+    max-width: 768px;
+}
+
+header{
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    max-width: 768px;
+    flex-direction: column;
+    img{
+        padding-top: 3%;
+        padding-bottom: 3%;
+        width: 50%;  
+    }
+
+    div{
+        
+        width: 100%;
+        justify-content: center;
+        display: flex;
+    }
+    .location{
+        font-weight: 500;
+        gap: 15px;
+        align-items: center;
+        height: 50px;
+        background-color: rgba(79, 74, 74, 0.138);
+    }
+}
+
+nav{
+    padding-top: 30px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    max-width: 768px;
+    width: 100%;
+    background-color: rgba(79, 74, 74, 0.064);
+
+    h1{
+        font-family: Shrikhand;
+        width: 220px;
+        font-size: 20px;
+        margin: 0;
+    }
+    p{
+        width: 73%;
+    }
+    button{
+        font-weight: 600;
+        margin-top: 10px;
+        border: none;
+        padding: 10px;
+        width: 180px;
+        border-radius: 20px 20px 20px 20px;
+        color: white;
+        background: linear-gradient(to bottom right, #FF79DA, #9356DC);;
+
+    }
+}
+
+.section_fonctionnement{
+    padding-bottom: 50px;
+    padding-left: 3%;
+    .fonct{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        
+        gap:20px;
+        &__etape{
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.123);
+            display: flex;
+            
+            font-weight: 500;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            width: 95%;
+            border-radius: 20px;
+            background-color: rgba(79, 74, 74, 0.042);
+            .fa-solid{
+                padding-right: 20px;
+                padding-left: 20px;
+                color: rgba(79, 74, 74, 0.437);
+            }
+        }
+    }
+}
+.numb_etape{
+    
+    
+    padding-top: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    border-radius: 50% ;
+    color: #fff;
+    
+    background-color: #9356DC;
+}
+
+#etape-3{
+    background-color: #9256dc25
+}
+
+.section_restaurants{
+    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-left: 3%;
+    background-color: rgba(79, 74, 74, 0.064);
+}
+
+.restaurants{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__card{
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.123);
+        border-radius: 10px;
+        background-color: #fff;
+        width: 96%;
+        height: 250px;
+        &__illustration{
+            position: relative;
+            img{
+                border-radius: 10px 10px 0 0px;
+                object-fit: cover;
+                height: 150px;
+                width: 100%;
+            }
+        }
+        &__info{
+            align-items: center;
+            padding-left: 3%;
+            display: flex;
+
+            
+        }
+    }
+}
+
+.new{
+    
+    padding: 5px;
+    top:5px;
+    right: 10px;
+    position: absolute;
+    color: hwb(158 7% 68% / 0.995);
+    background-color: #99E2D0;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+footer{
+    padding-left: 3%;
+    padding-top: 20px;
+    padding-bottom: 35px;
+    font-weight: 500;
+    color: white;
+    background-color: rgba(44, 43, 43, 0.907);
+    img{
+        
+        width: 120px;
+        margin-bottom: 13px;
+    }
+    .fa-solid{
+        width: 20px;
+    }
+}
+
+.footer-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cover{
+    max-width: 768px;
+    img{
+        width: 100%;
+        height: 240px;
+    }
+}
+
+.header_page_restau{
+    margin-top: none;
+    position: relative;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15%;
+
+    .fa-solid{
+        margin-left: 5%;
+        font-size: 23px ;
+    }
+}
+
+.food_section{
+    padding-left: 5%;
+    background-color: rgba(79, 74, 74, 0.064);
+    padding-top: 15px;
+    padding-bottom: 20px;
+    border-radius: 40px;
+    h2{
+        padding-bottom: 5px;
+        border-bottom: 4px solid #99E2D0;
+        width: 70px;
+        text-transform: uppercase;
+    }
+    button{
+        
+        font-weight: 600;
+        margin-top: 10px;
+        border: none;
+        padding: 15px;
+        width: 180px;
+        border-radius: 20px 20px 20px 20px;
+        color: white;
+        background: linear-gradient(to bottom right, #FF79DA, #9356DC);;
+    
+    }
+}
+.restaurant_title{
+    display: flex;
+    align-items: center;
+}
+
+.food_list{
+    
+    
+    &__item{
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.123);
+        margin-bottom: 20px;
+        width: 95%;
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 20px;
+    }
+}
+
+.info_item{
+    padding-left: 10px;
+    width: 65%;
+}
+
+
+
+
+.price{
+    display: flex;
+    justify-content: flex-end;
+    width: 28%;
+    height: 60px;
+    align-items: flex-end;
+    font-weight: bold;
+
+}
+.choice{
+    display: none;
+}
+
