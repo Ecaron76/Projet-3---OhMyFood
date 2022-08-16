@@ -1,9 +1,10 @@
 @import url(https://fonts.google.com/specimen/Roboto);
 @import url(https://fonts.google.com/specimen/Shrikhand);
 body {
+  margin: 0;
   font-family: Roboto;
   width: 100%;
-  max-width: 768px;
+  max-width: 767px;
 }
 
 header {
@@ -11,7 +12,7 @@ header {
   width: 100%;
   justify-content: center;
   display: flex;
-  max-width: 768px;
+  max-width: 767px;
   flex-direction: column;
 }
 header img {
@@ -32,27 +33,27 @@ header .location {
   background-color: rgba(79, 74, 74, 0.138);
 }
 
-nav {
+aside {
   padding-top: 30px;
   padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
-  max-width: 768px;
+  max-width: 767px;
   width: 100%;
   background-color: rgba(79, 74, 74, 0.064);
 }
-nav h1 {
+aside h1 {
   font-family: Shrikhand;
   width: 220px;
   font-size: 20px;
   margin: 0;
 }
-nav p {
+aside p {
   width: 73%;
 }
-nav button {
+aside button {
   font-weight: 600;
   margin-top: 10px;
   border: none;
@@ -119,7 +120,7 @@ nav button {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.123);
   border-radius: 10px;
   background-color: #fff;
-  width: 96%;
+  width: 97%;
   height: 250px;
 }
 .restaurants__card__illustration {
@@ -173,41 +174,59 @@ footer .fa-solid {
   gap: 5px;
 }
 
-.cover {
-  max-width: 768px;
-}
 .cover img {
+  object-fit: cover;
   width: 100%;
   height: 240px;
 }
 
 .header_page_restau {
+  gap: 15%;
   margin-top: none;
   position: relative;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  gap: 15%;
 }
 .header_page_restau .fa-solid {
-  margin-left: 5%;
-  font-size: 23px;
+  margin-left: 30px;
 }
 
+@media screen and (min-width: 320px) {
+  .header_page_restau .fa-solid {
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 420px) {
+  .header_page_restau .fa-solid {
+    font-size: 27px;
+  }
+}
+@media screen and (min-width: 490px) {
+  .header_page_restau .fa-solid {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 550px) {
+  .header_page_restau .fa-solid {
+    font-size: 50px;
+  }
+}
 .food_section {
-  padding-left: 5%;
   background-color: rgba(79, 74, 74, 0.064);
   padding-top: 15px;
   padding-bottom: 20px;
   border-radius: 40px;
 }
 .food_section h2 {
+  margin-left: 5%;
   padding-bottom: 5px;
   border-bottom: 4px solid #99E2D0;
   width: 70px;
   text-transform: uppercase;
 }
 .food_section button {
+  position: relative;
   font-weight: 600;
   margin-top: 10px;
   border: none;
@@ -218,11 +237,20 @@ footer .fa-solid {
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
 }
 
+.container_btn {
+  text-align: center;
+  width: 100%;
+}
+
 .restaurant_title {
+  margin-left: 5%;
   display: flex;
   align-items: center;
 }
 
+.food_list {
+  padding-left: 5%;
+}
 .food_list__item {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.123);
   margin-bottom: 20px;
@@ -249,6 +277,133 @@ footer .fa-solid {
 
 .choice {
   display: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  body {
+    max-width: 991px;
+  }
+  header {
+    max-width: 991px;
+  }
+  .location {
+    font-size: 19px;
+  }
+  aside {
+    max-width: 991px;
+  }
+  aside h1 {
+    font-family: Shrikhand;
+    width: 260px;
+    font-size: 28px;
+    margin: 0;
+  }
+  aside p {
+    font-size: 20px;
+    width: 73%;
+  }
+  aside button {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    border: none;
+    padding: 15px;
+    width: 220px;
+    border-radius: 20px 20px 20px 20px;
+    color: white;
+    background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  }
+  h2 {
+    font-size: 26px;
+  }
+  .section_fonctionnement h2 {
+    padding-bottom: 10px;
+    width: 50%;
+    border-bottom: solid rgba(146, 86, 220, 0.3568627451);
+    text-align: center;
+    margin-left: 23%;
+  }
+  .fonct__etape {
+    align-items: center;
+    height: 60px;
+    width: 80% !important;
+    margin-left: 9%;
+    font-size: 18px;
+  }
+  .numb_etape {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .section_restaurants h2 {
+    margin-left: 38.5%;
+  }
+  .restaurants__card {
+    height: 330px;
+    width: 88%;
+    margin-left: 5%;
+  }
+  .restaurants__card__illustration img {
+    height: 220px;
+  }
+  .restaurants__card__info h3 {
+    font-size: 21px;
+  }
+  .restaurants__card__info p {
+    font-size: 18px;
+  }
+  .new {
+    text-align: center;
+    width: 110px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  footer img {
+    width: 230px;
+  }
+  .footer-menu {
+    font-size: 18px;
+  }
+  .header_page_restau {
+    gap: 18%;
+  }
+  .header_page_restau .fa-solid {
+    font-size: 300%;
+  }
+  .restaurant_title {
+    margin-left: 0%;
+    flex-direction: column;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  .food_list {
+    padding-left: 0%;
+    justify-content: center;
+    gap: 2%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .food_list__item {
+    align-items: baseline;
+    width: 30%;
+  }
+  .food_section h2 {
+    width: 150px;
+  }
+  .food_section button {
+    font-size: 18px;
+    width: 240px;
+    height: 50px;
+  }
+  .info_item h3 {
+    font-size: 22px;
+  }
+  .info_item p {
+    font-size: 20px;
+  }
+  .price {
+    font-size: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
