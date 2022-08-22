@@ -6,7 +6,7 @@ body{
     margin: 0;
     font-family: Roboto;
     width: 100%;
-    max-width: 767px;
+    
 }
 
 header{
@@ -14,7 +14,7 @@ header{
     width: 100%;
     justify-content: center;
     display: flex;
-    max-width: 767px;
+    
     flex-direction: column;
     img{
         padding-top: 3%;
@@ -24,7 +24,6 @@ header{
 
     div{
         
-        width: 100%;
         justify-content: center;
         display: flex;
     }
@@ -44,7 +43,7 @@ aside{
     flex-direction: column;
     text-align: center;
     align-items: center;
-    max-width: 767px;
+    
     width: 100%;
     background-color: rgba(79, 74, 74, 0.064);
 
@@ -425,10 +424,11 @@ footer{
     .restaurant_title{
         margin-left: 0%;
         flex-direction: column;
+        h1{
+            font-size: 30px;
+        }
     }
-    h1{
-        font-size: 30px;
-    }
+    
     .food_list{
         padding-left: 0%;
         justify-content: center;
@@ -465,3 +465,133 @@ footer{
         font-size: 20px;
     }
 }
+@media screen and (min-width: 992px){
+    header{
+        img{
+            padding-top: 1%;
+            padding-bottom: 1%;
+            height: 50px;
+            width: 450px;
+        }
+    }
+    .location{
+        font-size: 15px;
+    }
+    aside{
+        h1{
+            
+            font-size: 26px;
+        }
+        p{
+            font-size: 22px;
+        }
+        button{
+            font-size: 20px;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            width: 400px;
+        }
+    }
+    .section_fonctionnement{
+        padding-left: 7%;
+        h2{
+            padding-bottom: 10px;
+            width: 50%;
+            border-bottom: solid rgba(146, 86, 220, 0.357);
+            text-align: center;
+            margin-left: 21%;
+            font-size: 24px;
+        }
+    }
+    .fonct{
+        flex-direction:unset!important;
+        &__etape{
+            justify-content: center;
+            
+            width: 30%!important;
+            .fa-solid{
+                font-size: 40px;
+            }
+            
+            p{
+                gap: 10px;
+                font-size: 20px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+    .numb_etape{
+        padding: 0;
+        width: 100%;
+    }
+    .restaurants{
+        margin-bottom: 40px;
+        width: 100%;
+        flex-direction: initial;
+        
+        &__card{
+            &__illustration{
+                img{
+                    height: 220px;
+                }
+            }
+            width: 47.5%;
+            height: 320px;
+        }
+    }
+    footer{
+        font-size: 20px;
+        img{
+            width: 200px;
+        }
+    }
+    .header_page_restau{
+        height: 70px;
+        gap: 33%;
+        img{
+            width: 25%;
+        }
+    }
+    .cover{
+        height: 350px;
+        img{
+            height: 350px;
+        }
+    }
+    .restaurant_title{
+        margin-left: 0%;
+        flex-direction: column;
+        h1{
+            font-size: 30px;
+        }
+    }
+    .food_section{
+        h2{
+            width: 150px;
+        }
+    }
+    .food_list{
+        padding-left: 0%;
+        justify-content: center;
+        gap: 2%;
+        display: flex;
+        flex-wrap: wrap;
+        
+        &__item{
+            align-items: baseline;
+            width: 30%;
+            
+            
+        }
+    }
+    .commander_cta{
+        padding-top: 1%!important;
+        padding-bottom: 1%!important;
+        width: 350px!important;
+    }
+    
+}
+      
+
