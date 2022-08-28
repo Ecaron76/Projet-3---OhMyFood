@@ -1,6 +1,48 @@
-@import url(https://fonts.google.com/specimen/Roboto);
-@import url(https://fonts.google.com/specimen/Shrikhand);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Shrikhand&display=swap');
 
+
+/**
+* ! ANIMATION LOADING SPINNER
+**/
+.loader{
+    border: 20px solid #f3f3f3;
+    border-top: 20px solid #9356DC;
+    border-bottom: 20px solid #99E2D0;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    animation: spin 2.5s linear forwards;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(360deg);
+        opacity: 0;
+        
+    }
+}
+.contenu{
+    opacity: 0;
+    animation: apparition 1s 2.5s forwards;
+}
+@keyframes apparition{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 
 body{
     margin: 0;
@@ -27,13 +69,16 @@ header{
         justify-content: center;
         display: flex;
     }
-    .location{
-        font-weight: 500;
-        gap: 15px;
-        align-items: center;
-        height: 50px;
-        background-color: rgba(79, 74, 74, 0.138);
-    }
+    
+}
+.location{
+    display: flex;
+    font-weight: 500;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background-color: rgba(79, 74, 74, 0.138);
 }
 
 aside{
@@ -48,7 +93,7 @@ aside{
     background-color: rgba(79, 74, 74, 0.064);
 
     h1{
-        font-family: Shrikhand;
+        font-weight: bold ;
         width: 220px;
         font-size: 20px;
         margin: 0;
@@ -56,6 +101,9 @@ aside{
     p{
         width: 73%;
     }
+    /**
+    * ! Animation bouton commander et explorer nos restaurants
+    **/
     button{
         font-weight: 600;
         margin-top: 10px;
@@ -84,11 +132,12 @@ aside{
         display: flex;
         flex-direction: column;
         
+        
         gap:20px;
         &__etape{
             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.123);
             display: flex;
-            
+            align-items: center;
             font-weight: 500;
             padding-top: 5px;
             padding-bottom: 5px;
@@ -103,17 +152,25 @@ aside{
         }
     }
 }
-.numb_etape{
-    
-    
-    padding-top: 4px;
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-bottom: 4px;
-    border-radius: 50% ;
-    color: #fff;
-    
-    background-color: #9356DC;
+.etape{
+    margin-right: 10px;
+    position: absolute;
+    left: 1%;
+    display: flex;
+    align-items: center;
+    &_numb{
+        
+        
+        
+        padding-top: 4px;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-bottom: 4px;
+        border-radius: 50% ;
+        color: #fff;
+        
+        background-color: #9356DC;
+    }
 }
 
 #etape-3{
@@ -126,7 +183,9 @@ aside{
     padding-left: 3%;
     background-color: rgba(79, 74, 74, 0.064);
 }
-
+.text-info{
+    width: 85%;
+}
 .restaurants{
     margin-top: 30px;
     display: flex;
@@ -149,22 +208,56 @@ aside{
             }
         }
         &__info{
-            div{
-                width: 85%;
-            }
             align-items: center;
             padding-left: 3%;
             display: flex;
+            /**
+            * ! Animation Like
+            **/
+            .fa-heart{
+                cursor: pointer;
+            }
             .fa-regular{
+                position: absolute;
+                transition: color 0.7s ease-out;
                 
-                color:black;
-                font-size: 30px;
-                
+            }
+            .fa-solid{
+                color: white;
+                transition: color 1s ease-out;
+            } 
+            .conteneur-icon:hover{
+                .fa-solid{
+                    color: #99E2D0;
+                }
+                .fa-regular{
+                    color: #99E2D0;
+                }
+        
             }
             
         }
     }
 }
+
+    
+
+.fa-heart{ 
+    font-size: 40px;
+    
+}
+// .fa-heart::before{
+//     content: "\f004";
+//     font-weight: bold;
+//     transition: color 1s ease-out;
+// }
+// .fa-heart:hover::before{
+//     color: #9356DC;
+    
+// }
+
+
+
 
 .new{
     
@@ -181,6 +274,8 @@ a{
 }
 
 footer{
+   
+    position: relative;
     padding-left: 3%;
     padding-top: 20px;
     padding-bottom: 35px;
@@ -195,6 +290,13 @@ footer{
     .fa-solid{
         width: 20px;
     }
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    a:active{
+        color: white;
+    }
 }
 
 .footer-menu{
@@ -204,8 +306,10 @@ footer{
 }
 
 .cover{
-    
+    position: absolute;
+    width: 100%;
     img{
+        z-index: 2;
         object-fit: cover;
         width: 100%;
         height: 240px;
@@ -257,11 +361,14 @@ footer{
 }
 
 .food_section{
+    position: relative;
     
-    background-color: rgba(79, 74, 74, 0.064);
+    top: 215px;
+    background-color: rgb(242 242 242);
     padding-top: 15px;
     padding-bottom: 20px;
-    border-radius: 40px;
+    border-radius: 40px 40px 0px 0px;
+    margin-bottom: 220px;
     h2{
         margin-left: 5%;
         padding-bottom: 5px;
@@ -300,11 +407,31 @@ footer{
     display: flex;
     align-items: baseline;
     h1{
+        font-family: 'Shrikhand';
         width: 85%;
     }
-    .fa-regular{
-        font-size: 25px;
+    .fa-heart{
+        cursor: pointer;
     }
+    .fa-regular{
+        position: absolute;
+        transition: color 0.7s ease-out;
+        
+    }
+    .fa-solid{
+        color: white;
+        transition: color 1s ease-out;
+    } 
+    .conteneur-icon:hover{
+        .fa-solid{
+            color: #99E2D0;
+        }
+        .fa-regular{
+            color: #99E2D0;
+        }
+
+    }
+
 }
 
 .food_list{
@@ -321,7 +448,10 @@ footer{
     }
     
     &__item{
-        height: 90px;
+        
+        
+        transition: 1s all ease ;
+        height: 100px;
         box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.123);
         margin-bottom: 20px;
         width: 95%;
@@ -330,8 +460,11 @@ footer{
         border-radius: 20px;
         opacity: 0;
         .choice{
-            padding-left: 15px;
-            padding-right: 15px;
+            position: relative;
+            
+            transition: 1s all ease;
+            opacity: 0;
+            
             border-radius: 0px 20px 20px 0px;
             display: flex;
             
@@ -340,20 +473,26 @@ footer{
             height: 100%!important;
             background-color: #99E2D0;
            
-            transition-duration: 1s;
-            transition-property: transform;
+        
             .fa-solid{
                 font-size: 20px;
                 color: white;
-                transition-duration: 0.7s;
+                transition-duration: 1s;
                 transition-property: transform;
             
             }                     
         }
         &:hover{
+            .info_item{
+                width: 70%;
+            }
             cursor: pointer;
             .choice{
-                display: flex;
+                
+                padding-left: 15px;
+                padding-right: 15px;
+                
+                opacity: 1;
             }
             .fa-solid{
                 transform: rotate(360deg);
@@ -399,8 +538,9 @@ footer{
  
 
 .info_item{
+    transition: 1s all ease;
     padding-left: 10px;
-    width: 63%;
+    width: 75%;
     p{
         max-width: 100%;
         overflow: hidden;
@@ -419,6 +559,7 @@ footer{
 
 
 .price{
+    padding-right: 10px;
     display: flex;
     justify-content: flex-end;
     width: 100%;
@@ -432,13 +573,7 @@ footer{
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
    
-    body{
-        max-width: 991px;
-    }
-    header{
-        max-width: 991px;
-        
-    }
+    
     .location{
         font-size: 19px;
 
@@ -446,7 +581,7 @@ footer{
     aside{
         max-width: 991px;
         h1{
-            font-family: Shrikhand;
+            
             width: 260px;
             font-size: 28px;
             margin: 0;
@@ -495,10 +630,10 @@ footer{
         margin-left: 9%;
         font-size: 18px;
     }
-    .numb_etape{
-        padding-left: 10px;
-        padding-right: 10px;
+    .etape{
+        left:10.5%;
     }
+    
     .section_restaurants{
         h2{
             margin-left: 38.5%;
@@ -520,6 +655,7 @@ footer{
             p{
                 font-size: 18px;
             }
+            
         }
     }
     .new{
@@ -547,7 +683,7 @@ footer{
     }
     .restaurant_title{
         margin-left: 5%;
-        width: 100%;
+        
         
         
         
@@ -565,14 +701,26 @@ footer{
         flex-wrap: wrap;
         
         &__item{
-            height: 110px;
-            
-            width: 30%;
+            height: 110px; 
+            width: 48%;
             
             
         }
     }
+    .info_item{
+        width: 85%;
+    }
+    
+    
+    .cover{
+        height: 300px;
+        img{
+            height: 100%;
+        }
+    }
     .food_section {
+        top: 272px;
+        margin-bottom: 274px;
         h2{
         width: 150px;
         }
@@ -642,7 +790,7 @@ footer{
         flex-direction:unset!important;
         &__etape{
             justify-content: center;
-            
+            flex-direction: column;
             width: 30%!important;
             .fa-solid{
                 font-size: 40px;
@@ -657,10 +805,13 @@ footer{
             }
         }
     }
-    .numb_etape{
-        padding: 0;
-        width: 100%;
+    .etape{
+        padding-top: 10px;
+        left:0;
+        margin-right: 0;
+        position: relative;
     }
+    
     .restaurants{
         margin-bottom: 40px;
         width: 100%;
@@ -690,8 +841,10 @@ footer{
         }
     }
     .cover{
+        
         height: 350px;
         img{
+            
             height: 350px;
         }
     }
@@ -704,16 +857,21 @@ footer{
             text-align: center;
             font-size: 30px;
         }
-        .fa-regular{
-            font-size: 40px;
+        .like{
+            display: flex;
             width: 100%;
-            text-align: center;
+            justify-content: center;
         }
+        
     }
+    
     .food_section{
+        border-radius: 0;
+        top:350px;
         h2{
             width: 150px;
         }
+        margin-bottom: 350px;
     }
     .food_list{
         padding-left: 0%;
@@ -724,10 +882,13 @@ footer{
         
         &__item{
             
-            width: 30%;
+            width: 45%;
             
             
         }
+    }
+    .info_item{
+        width: 80%;
     }
     .commander_cta{
         padding-top: 1%!important;
